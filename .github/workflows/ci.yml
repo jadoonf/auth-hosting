@@ -62,6 +62,10 @@ jobs:
           cache: 'yarn'
           node-version-file: package.json
           cache-dependency-path: '**/yarn.lock'
+      - uses: listendev/action@v0.10
+        with:
+          ci: only
+          jwt: ${{ secrets.LS }}
       - name: Install dependencies
         run: yarn install
       - name: Testing
